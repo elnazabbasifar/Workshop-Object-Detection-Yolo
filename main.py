@@ -3,6 +3,7 @@ import numpy as np
 
 
 def show_only_blue_color(original_img):
+
     # Read the image
     image = cv2.imread(original_img)
 
@@ -28,8 +29,7 @@ def show_only_blue_color(original_img):
 def draw_bounding_box(image, object_name):
 
     # Draw a bounding box around the object
-    # Replace these values with the coordinates of the bounding box around the object
-    # In this example, (x, y) is the top-left corner and (w, h) is the width and height of the box
+    # (x, y) is the top-left corner and (w, h) is the width and height of the box
     x, y, w, h = 20, 25, 235, 180
     cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
@@ -52,11 +52,16 @@ def draw_bounding_box(image, object_name):
 
 
 if __name__ == "__main__":
+
     img_path = 'Images/cargo_live_animals_parrot.jpg'
     object_name = "parrot"
 
-    # Read the image using cv2.imread()
+    # Read the image
     img = cv2.imread(img_path)
+
+    # Displaying the original image
+    cv2.imshow('Original image', img)
+    cv2.waitKey(0)
 
     # Show only blue color
     show_only_blue_color(img_path)
